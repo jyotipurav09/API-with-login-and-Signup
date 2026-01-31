@@ -15,7 +15,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  useEffect(() => {
+useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       navigate("/");
@@ -90,6 +90,7 @@ const Login = () => {
               </p>
             )}
           </div>
+          <p className="cursor-pointer" onClick={() => navigate("/forgotPassword")}>forgot Password</p>
 
           {/* API Error */}
           {apiError && (

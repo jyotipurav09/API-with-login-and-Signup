@@ -4,6 +4,9 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Layout from "./pages/layouts/Layout";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import OTP from "./pages/OTP";
+import ResetPassword from "./pages/ResetPassword";
 
 const AuthGuard = () =>{
 return token? <Outlet /> : <Navigate to ={"/login"}/>;
@@ -15,6 +18,9 @@ const AppRouter = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/Otp" element={<OTP />} />
+         <Route path="/ResetPassword" element={<ResetPassword />} />
         {/* <Route path="/profile" element={<Profile />} /> */}
         <Route element={<AuthGuard/>}/>
         <Route path="/" element={<Layout />}>
